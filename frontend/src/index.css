@@ -1,0 +1,457 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+/*  display: flex;
+  place-items: center;*/
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Fix for button color issues */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Form control fixes */
+input, 
+input[type="text"],
+textarea,
+select {
+  color: #1a1a1a !important;
+  background-color: #fff !important;
+  border: 1px solid #d1d5db !important;
+}
+
+input::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Fix for placeholder color in dark inputs */
+.bg-gray-800 input::placeholder,
+.bg-gray-900 input::placeholder,
+.bg-black input::placeholder,
+input.bg-gray-800::placeholder,
+input.bg-gray-900::placeholder,
+input.bg-black::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Override for blue buttons */
+.bg-blue-600,
+.bg-blue-700,
+button.bg-blue-600,
+button.bg-blue-700 {
+  color: white !important;
+  background-color: #2563eb !important;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: #1d4ed8 !important;
+  color: white !important;
+}
+
+/* Sidebar improvements */
+.text-green-600,
+.text-blue-600,
+.text-gray-600,
+.text-gray-400 {
+  color: inherit !important;
+}
+
+.text-green-500 {
+  color: #10b981 !important;
+}
+
+.text-red-500 {
+  color: #ef4444 !important;
+}
+
+.text-green-600 {
+  color: #059669 !important;
+}
+
+.text-blue-600 {
+  color: #2563eb !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+/* Question highlighting in sidebar */
+[class*="text-blue-600"] {
+  color: #2563eb !important;
+}
+
+/* Answers in learning interface */
+.grid-cols-1 button,
+.grid-cols-2 button {
+  background-color: white;
+  color: #1a1a1a;
+  border: 2px solid #e5e7eb;
+}
+
+.grid-cols-1 button:hover,
+.grid-cols-2 button:hover {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+/* Fix for answer buttons during selection */
+button.border-green-500 {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+  border-color: #10b981 !important;
+}
+
+button.border-red-500 {
+  background-color: #fef2f2 !important;
+  color: #991b1b !important;
+  border-color: #ef4444 !important;
+}
+
+/* Answer options in dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+  }
+  
+  /* Override for dark mode button colors */
+  button.bg-blue-600,
+  button.bg-blue-700,
+  button.hover\:bg-blue-700:hover {
+    color: white !important;
+    background-color: #2563eb !important;
+  }
+  
+  /* Force light background on inputs in dark mode */
+  input, select, textarea {
+    color: #1a1a1a !important;
+    background-color: #fff !important;
+  }
+  
+  /* Fix answer button styles */
+  .grid-cols-1 button,
+  .grid-cols-2 button {
+    background-color: white !important;
+    color: #1a1a1a !important;
+  }
+}
+
+/* Mobile responsiveness classes */
+@media (max-width: 767px) {
+  /* General mobile adjustments */
+  .mobile {
+    font-size: 14px;
+  }
+  
+  /* Portrait mode specific */
+  @media (orientation: portrait) {
+    /* Video container in portrait mode */
+    .mobile .pt-\[56\.25\%\] {
+      padding-top: 75%; /* Taller video container for portrait */
+    }
+    
+    /* Character and question area spacing */
+    .mobile .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+    }
+    
+    /* Answer buttons in portrait mode */
+    .mobile .grid-cols-1 button {
+      min-height: 3rem;
+      background-color: white !important;
+      color: #1a1a1a !important;
+    }
+  }
+  
+  /* Landscape mode specific */
+  @media (orientation: landscape) {
+    /* Content layout adjustments */
+    .mobile .pt-14 {
+      padding-top: 3.5rem;
+    }
+    
+    /* Smaller margins and padding */
+    .mobile .p-2 {
+      padding: 0.5rem;
+    }
+    
+    /* Answer grid in landscape */
+    .mobile .grid-cols-2 {
+      gap: 0.5rem;
+    }
+    
+    /* Handle smaller height in landscape */
+    .mobile .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+    }
+    
+    /* Answer buttons in landscape */
+    .mobile .grid-cols-2 button {
+      background-color: white !important;
+      color: #1a1a1a !important;
+    }
+  }
+  
+  /* Modal adjustments for mobile */
+  .mobile .modal-content {
+    width: 90%;
+    max-height: 80vh;
+    padding: 1rem;
+  }
+  
+  /* Improved touch targets */
+  .mobile button {
+    min-height: 2.5rem;
+  }
+  
+  /* Sidebar adjustments */
+  .mobile .sidebar-open {
+    overflow: hidden;
+  }
+  
+  /* Fix for sidebar text colors */
+  .mobile [class*="text-green-600"] {
+    color: #059669 !important;
+  }
+  
+  .mobile [class*="text-blue-600"] {
+    color: #2563eb !important;
+  }
+  
+  .mobile [class*="text-gray-600"],
+  .mobile [class*="text-gray-400"] {
+    color: #4b5563 !important;
+  }
+  
+  /* Mobile answer buttons specific fixes */
+  .mobile button.border-green-500 {
+    background-color: #ecfdf5 !important;
+    color: #065f46 !important;
+  }
+  
+  .mobile button.border-red-500 {
+    background-color: #fef2f2 !important;
+    color: #991b1b !important;
+  }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 360px) {
+  .mobile {
+    font-size: 12px;
+  }
+  
+  .mobile .p-2 {
+    padding: 0.25rem;
+  }
+  
+  .mobile .gap-2 {
+    gap: 0.25rem;
+  }
+  
+  .mobile .w-32,
+  .mobile .h-32 {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+/* DetailedExplanationModal mobile adjustments */
+.modal-overlay.mobile {
+  padding: 0.5rem;
+}
+
+.modal-content.mobile {
+  max-width: 95%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.modal-content.mobile .modal-header {
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.modal-content.mobile .modal-body {
+  max-height: 70vh;
+  font-size: 0.875rem;
+}
+
+.modal-content.mobile .modal-footer {
+  padding-top: 0.5rem;
+}
+
+.modal-content.mobile .modal-close-button {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Fix for YouTube player on iOS */
+.youtube-container iframe {
+  pointer-events: auto;
+}
+
+/* Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Force hardware acceleration on animations */
+  .character-animation {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Fix for fixed positioning on iOS */
+  .fixed-ios {
+    position: absolute;
+  }
+  
+  /* Better text rendering on iOS */
+  input, button, select, textarea {
+    -webkit-appearance: none;
+  }
+}
+
+/* Fix for question text visibility */
+.bg-white h2 {
+  color: #1a1a1a !important;
+}
+
+/* Android-specific overrides for color issues */
+@supports (-webkit-appearance:none) and (not (overflow:-webkit-marquee)) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
+  /* Specific fixes for the answer buttons in Android */
+  .grid-cols-1 button,
+  .grid-cols-2 button {
+    background-color: white !important;
+    color: #1a1a1a !important;
+    border: 2px solid #e5e7eb !important;
+  }
+  
+  /* Input field fixes for Android */
+  input[type="text"] {
+    background-color: white !important;
+    color: #1a1a1a !important;
+  }
+  
+  /* Selected states with better visibility */
+  button.border-green-500 {
+    background-color: #ecfdf5 !important;
+    color: #065f46 !important;
+    border-color: #10b981 !important;
+  }
+  
+  button.border-red-500 {
+    background-color: #fef2f2 !important;
+    color: #991b1b !important;
+    border-color: #ef4444 !important;
+  }
+  
+  /* Blue button explicit override */
+  .bg-blue-600,
+  button.bg-blue-600,
+  button.hover\:bg-blue-700:hover {
+    background-color: #2563eb !important;
+    color: white !important;
+  }
+}
+
+/* Sidebar overrides - explicitly set proper colors */
+.fixed.left-0.top-0.h-full.bg-white .text-green-600 {
+  color: #059669 !important;
+}
+
+.fixed.left-0.top-0.h-full.bg-white .text-blue-600 {
+  color: #2563eb !important;
+}
+
+.fixed.left-0.top-0.h-full.bg-white .text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.fixed.left-0.top-0.h-full.bg-white .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.fixed.left-0.top-0.h-full.bg-white .text-green-500 {
+  color: #10b981 !important;
+}
+
+.fixed.left-0.top-0.h-full.bg-white .text-red-500 {
+  color: #ef4444 !important;
+}
+
+/* Tick and cross improvements */
+.ml-2.text-xs.text-green-500 {
+  color: #10b981 !important;
+  font-weight: bold;
+}
+
+.ml-2.text-xs.text-red-500 {
+  color: #ef4444 !important;
+  font-weight: bold;
+}
