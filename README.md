@@ -10,7 +10,7 @@ This project was developed as part of the annual Google x MIT Hackathon, bringin
 
 
 
-<img width="1252" alt="image" src="https://github.com/user-attachments/assets/7c3ff8e4-61fc-4108-a75a-cec3159e34f1" />
+<img width="1252" alt="image" src="https://github.com/user-attachments/assets/6cab8f09-c153-49fc-a9c9-bdcea667ceaa" />
 
 
 ## 🚀 Product Vision
@@ -85,5 +85,5 @@ This project demonstrates my ability to work across the full product stack:
 
 ## 📊 Architecture Diagram
 
-<img width="1252" alt="image" src="https://github.com/user-attachments/assets/5e293b06-a51a-42f2-ba16-109769d2dc85" />
+<img width="1252" alt="image" src="https://github.com/user-attachments/assets/20d9df1d-42e7-4d9a-ab38-7da418b31a06" />
 
