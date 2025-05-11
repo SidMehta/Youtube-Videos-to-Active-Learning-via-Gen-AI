@@ -6,7 +6,7 @@
 
 **[Watch Demo Video](https://drive.google.com/file/d/168s8aX615GmtZNHecHuS7QelVWjcbTvj/view)**
 
-This project was developed as part of the annual Google x MIT Hackathon, bringing together talent from MIT and Harvard. Working with a small team of 3, I led the product vision and technical implementation that earned us the 2nd Runner-up Prize among highly competitive projects.
+This project was developed as part of the annual Google x MIT Hackathon, competing against teams from across MIT and Harvard. 
 
 
 
